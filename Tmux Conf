@@ -1,0 +1,39 @@
+# Remap prefix from 'C-b' to 'C-a'
+unbind C-b
+set-option -g prefix C-a
+set-option -g prefix2 C-b
+bind-key C-a send-prefix
+
+# Enabling Mouse Mode
+set-option -g mouse on
+
+# Split panes using | and -
+bind | split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+# Disable exit-emptu
+set -s exit-empty off
+
+# Start counting pane and window number at 1
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Customising Status Bar Appearance
+set -g status-bg blue
+set -g status-fg black
+
+# Enable Visual Notifications
+setw -g monitor-activity on
+setw -g visual-activity on
+
+# Change pane colors
+set -g pane-active-border fg=red
+set -ag pane-active-border bg=magenta
+
+# Reload Configuration w/o Restarting Sessions
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+# Enable Clipboard
+set -s set-clipboard external
