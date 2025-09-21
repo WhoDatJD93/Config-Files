@@ -1,6 +1,15 @@
 "Display Settings
+" Show absolute line numbers
 set number
+
+" Show relative numbers (useful for quick movement like 5j or 3k)
+set relativenumber
+
 set cursorline
+
+" Highlight search results
+set hlsearch
+
 syntax on
 
 "Text Display Settings
@@ -16,21 +25,64 @@ set noerrorbells
 set laststatus=2
 
 
-"Setting the color scheme
+
+" ================================
+" COLOR SCHEME
+" ================================
 colorscheme desert
 set background=dark
 
-"Set tab->spaces
+" ================================
+" INDENTATION & FORMATTING
+" ================================
+
+" Use spaces instead of tabs
 set expandtab
-set tabstop=2
 
-set scrolloff=2
+" Number of spaces that a <Tab> counts for
+set tabstop=4
+
+" Number of spaces used for autoindent
+set shiftwidth=4
+
+" Number of spaces for <Tab> in insert mode
+set softtabstop=4
+
+" Enable smart indentation (good for code/scripts)
+set smartindent
 
 
-"Search Settings
+
+" ================================
+" BASIC QUALITY OF SEARCH SETTINGS
+" ================================
+
+" Show matches as you type
 set incsearch
+
+" Ignore case when searching…
 set ignorecase
+
+" …unless you type a capital letter
 set smartcase
 
-"Misc
+" Show matching brackets/parentheses
+set showmatch
+
+
+" Keep 5 lines visible above/below the cursor
+set scrolloff=5
+
+" Keep 5 columns visible left/right of the cursor
+set sidescrolloff=5
+
+" ================================
+" MISC SETTINGS
+" ================================
+
+" Show hidden whitespace (great for YAML, config files, scripts)
+set list
+set listchars=tab:▸\ ,trail:·,eol:¬
+
+" Set stored history amount 
 set history=1000
